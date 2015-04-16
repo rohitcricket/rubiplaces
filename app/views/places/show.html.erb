@@ -18,11 +18,17 @@
   <strong>Description</strong>
   <%= @place.website %>
   </p>
-  <div id="map-canvas" style="width: 300px; height: 300px;"></div>
+  <div id="map-canvas" style="width: 250px; height: 250px;"></div>
 </div>
 
   <div class="col-md-9">
     <h1>Reviews by People</h1>
+    <% if current_user %>
+      <h5>New Review</h5>
+      <%= render "reviews/form" %>
+      <h5>All Reviews</h5>
+      <%= render @reviews %>
+    <% end %>
   </div>
 </div>
 
